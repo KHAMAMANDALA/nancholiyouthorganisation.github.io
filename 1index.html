@@ -1,0 +1,234 @@
+<html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nancholi Youth Organization</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 5px 0 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .slideshow {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slideshow img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slideshow img.active {
+            opacity: 1;
+        }
+
+        .grid-section {
+            background-color: white;
+            color: black;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .grid-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .grid-box {
+            padding: 20px;
+            border: 2px solid green;
+            border-radius: 10px;
+        }
+
+        .media-section {
+            background-color: #f0f0f0;
+            padding: 2px 2px;
+            text-align: center;
+        }
+
+        .media-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .media-content video {
+            max-width: 100%;
+            border: 2px solid red;
+            border-radius: 10px;
+        }
+
+        .media-content .post {
+            background-color: white;
+            padding: 50px;
+            border-left: 200px solid black;
+            max-width: 400px;
+			max-height:400px;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <img src="D:\softwares\khama\Nayo\nayo1/nayo_logo-png.png" alt="Nancholi Youth Logo" style="height: 60px;">
+        <div>
+            <h1 style="margin: 0;">NANCHOLI YOUTH ORGANIZATION</h1>
+            <nav>
+                <ul>
+                    <li><a href="1index.html">Home</a></li>
+                    <li><a href="2about.html">About</a></li>
+                    <li><a href="3donors.html">Donors</a></li>
+                    <li><a href="4services.html">Services</a></li>
+                    <li><a href="5contacts.html">Contacts</a></li>
+					<li><a href="6blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Slideshow -->
+    <section class="slideshow">
+	    <p>WELCOME TO NANCHOLI YOUTH ORGANIZATION</p>
+        <img src="D:\softwares\khama\Nayo\nayo1/NAYO home.jpg" class="active" alt="Slide 1">
+        <img src="D:\softwares\khama\Nayo\nayo1/nayo img.jpg" alt="Slide 2">
+		<img src="D:\softwares\khama\Nayo\nayo1/nayo adge.jpg" alt="Slide 3">
+    </section>
+	
+    <!-- Video and Post Section -->
+    <section class="media-section">
+        <h2 style="color: green;">Media & News</h2>
+        <div class="media-content">
+            <video controls width="700" height="350">
+                <source src="D:\softwares\khama\Nayo\nayo1/Nancholi Clinic & nutrition Documentary" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="post-slideshow-container" style="max-width: 700px; margin: auto; position: relative; overflow: hidden;">
+
+    <!-- Slide 1 -->
+    <div class="post-slide fade" style="display: block;">
+        <img src="D:\softwares\khama\Nayo\nayo1/puzzle.jpg" style="width: 100%; height: 300px; object-fit: cover;">
+        <div class="post-text" style="padding: 10px; background-color: white;">
+            <h3 style="color: red;">Latest Post</h3>
+            <p>We are excited to announce a new youth empowerment initiative! This program focuses on <strong>health</strong>, <strong>education</strong>, and <strong>entrepreneurship</strong>.</p>
+        </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="post-slide fade" style="display: none;">
+        <img src="D:\softwares\khama\Nayo\nayo1/nayo youth.jpg" style="width: 100%; height: 300px; object-fit: cover;">
+        <div class="post-text" style="padding: 10px; background-color: white;">
+            <h3 style="color: red;">Community Outreach</h3>
+            <p>Our recent outreach in rural areas delivered free health checkups and youth mentoring. Thank you to our volunteers!</p>
+        </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="post-slide fade" style="display: none;">
+        <img src="D:\softwares\khama\Nayo\nayo1/nayo white.jpg" style="width: 100%; height: 300px; object-fit: cover;">
+        <div class="post-text" style="padding: 10px; background-color: white;">
+            <h3 style="color: red;">Skills Training</h3>
+            <p>We recently launched vocational training sessions for youths interested in tailoring and computer basics. Enroll today!</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    let slideIndex = 0;
+    showPostSlides();
+
+    function showPostSlides() {
+        let i;
+        const slides = document.getElementsByClassName("post-slide");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showPostSlides, 4000); // Change slide every 4 seconds
+    }
+</script>
+
+        </div>
+    </section>
+	
+    <!-- Donors and Services Grid Section -->
+    <section class="grid-section" id="donors">
+        <h2 style="color: red;">Donors and Services</h2>
+        <div class="grid-boxes">
+            <div class="grid-box" style="background-color: #e6ffe6;">PROJECTS
+			
+			
+			</div>
+            <div class="grid-box" style="background-color: #e6ffe6;">EVENTS</div>
+            <div class="grid-box" style="background-color: #fff0f0;">UK FUNDRAISERS</div>
+            <div class="grid-box" style="background-color: #fff0f0;">VOLUNTEER</div>
+        </div>
+    </section>
+
+    
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nancholi Youth Organization | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript for Slideshow -->
+    <script>
+        let slides = document.querySelectorAll('.slideshow img');
+        let index = 0;
+
+        setInterval(() => {
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }, 3000);
+    </script>
+
+</body>
+</html>
+

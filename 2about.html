@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Nancholi Youth Organization</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 5px 0 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            height: 400px;
+            margin: 20px 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slideshow-container img.active {
+            opacity: 1;
+        }
+
+        .footer {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2, h3, h4, h5 {
+            color: white;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        a {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <img src="E:/Nayo/nayo_logo-png.png" alt="Nancholi Youth Logo" style="height: 60px;">
+        <div>
+            <h1 style="margin: 0;">NANCHOLI YOUTH ORGANIZATION</h1>
+            <nav>
+                <ul>
+                    <li><a href="1index.html">Home</a></li>
+                    <li><a href="2about.html">About</a></li>
+                    <li><a href="3donors.html">Donors</a></li>
+                    <li><a href="4services.html">Services</a></li>
+                    <li><a href="5contacts.html">Contacts</a></li>
+                    <li><a href="6blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Slideshow 1 -->
+    <div class="slideshow-container" id="slideshow1">
+        <img src="D:\softwares\khama\Nayo\nayo1/nayo wht.jpg" class="active" alt="NAYO Activity 1">
+        <img src="D:\softwares\khama\Nayo\nayo1/nayo2.jpg" alt="NAYO Activity 2">
+        <img src="D:\softwares\khama\Nayo\nayo1/nayo youth.jpg" alt="NAYO Activity 3">
+    </div>
+
+    <!-- Content -->
+    <section>
+        <h1>ABOUT NAYO</h1>
+        <p>NAYO’s 175 volunteers work in 16 villages in the Nancholi area to implement activities related to HIV/ AIDS, human rights, environmental protection, and youth activities.</p>
+
+        <h2>HISTORY OF NAYO</h2>
+        <p>Nancholi is a small rural district nestled in the hills surrounding the city of Blantyre... [Text shortened here for brevity]</p>
+
+        <h3>OUR OBJECTIVES</h3>
+        <ul>
+            <li>To promote full and equal social participation among youth</li>
+            <li>To build life skills among youths</li>
+            <li>To educate youths and the community in areas like HIV/AIDS, health, rights, food, gender and environment</li>
+            <li>To fight discrimination against HIV/AIDS infected, orphans, elderly and chronically ill</li>
+            <li>To educate and assist youths with drug and substance abuse challenges</li>
+        </ul>
+
+        <h4>OUR TEAM</h4>
+        <p>Our management includes a Board of Trustees, Executive Director, and up to 175 volunteers!</p>
+
+        <h5>OUR PARTNERS</h5>
+        <p>NAYO partners with organizations like MANASO, National AIDS Commission, SKIP, JHR, MIJ and many more.</p>
+    </section>
+
+    <!-- Slideshow 2 -->
+    <div class="slideshow-container" id="slideshow2">
+        <img src="D:\softwares\khama\Nayo\nayo1.jpg" class="active" alt="Community Engagement">
+        <img src="D:\softwares\khama\Nayo\nayo1.jpg" alt="Youth Workshop">
+        <img src="D:\softwares\khama\Nayo\nayo1.jpg" alt="Health Outreach">
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Nancholi Youth Organization | All Rights Reserved</p>
+        <a href="index.html" style="color: white;">Back to Home</a>
+		<ul>
+		    <i><a href="index.html">About Developer</a></li>
+		</ul>	
+    </div>
+
+    <!-- Slideshow Script -->
+    <script>
+        function initSlideshow(id) {
+            const slides = document.querySelectorAll(`#${id} img`);
+            let index = 0;
+            setInterval(() => {
+                slides[index].classList.remove('active');
+                index = (index + 1) % slides.length;
+                slides[index].classList.add('active');
+            }, 3000);
+        }
+
+        initSlideshow("slideshow1");
+        initSlideshow("slideshow2");
+    </script>
+</body>
+</html>
